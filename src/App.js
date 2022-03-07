@@ -1,11 +1,15 @@
-import React from "react";
-import "./style.css";
+import * as React from 'react';
+import { Routes, Route, Link } from 'react-router-dom';
+import Home from './pages/Home';
 
-export default function App() {
+function App() {
   return (
-    <div>
-      <h1>Hello StackBlitz!</h1>
-      <p>Start editing o e some magic happen :)</p>
+    <div className="App">
+      <Routes>
+        <Route path="/" element={<Home />} />
+      </Routes>
     </div>
   );
 }
+
+export default App;
