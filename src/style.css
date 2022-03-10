@@ -3,5 +3,8 @@ p {
   font-family: Lato;
 }
 .buttonsNavbar {
-  margin-left: 5px;
+  margin-right: 5px;
+}
+div {
+  font-family: 'Nunito', sans-serif;
 }

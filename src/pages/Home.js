@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { Navbar, Container, Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 function Home() {
   return (
@@ -9,7 +10,9 @@ function Home() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse className="justify-content-end">
           <Navbar.Text className="buttonsNavbar">
-            <Button variant="outline-success">ADD</Button>
+            <Link to="/addproduct">
+              <Button variant="outline-success">ADD</Button>
+            </Link>
           </Navbar.Text>
           <Navbar.Text>
             <Button variant="outline-danger">DELETE</Button>
