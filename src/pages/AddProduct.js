@@ -30,37 +30,43 @@ function AddProduct() {
         );
       case 'Furniture':
         return (
-          <div>
-            <label className="form-label" htmlFor="height">
-              Height (CM)
-            </label>
-            <input
-              className="form-control"
-              type="number"
-              id="height"
-              name="height"
-            />
-            <label className="form-label" htmlFor="width">
-              Width (CM)
-            </label>
-            <input
-              className="form-control"
-              type="number"
-              id="width"
-              name="width"
-            />
-            <label className="form-label" htmlFor="length">
-              Length (CM)
-            </label>
-            <input
-              className="form-control"
-              type="number"
-              id="length"
-              name="length"
-            />
+          <div className="row">
+            <div className="col-4">
+              <label className="form-label" htmlFor="height">
+                Height
+              </label>
+              <input
+                className="form-control"
+                type="number"
+                id="height"
+                name="height"
+              />
+            </div>
+            <div className="col-4">
+              <label className="form-label" htmlFor="width">
+                Width
+              </label>
+              <input
+                className="form-control"
+                type="number"
+                id="width"
+                name="width"
+              />
+            </div>
+            <div className="col-4">
+              <label className="form-label" htmlFor="length">
+                Length
+              </label>
+              <input
+                className="form-control"
+                type="number"
+                id="length"
+                name="length"
+              />
+            </div>
             <div className="form-text text-warning">
               Please, provide dimensions of this Furniture in <b>HxWxLx</b>{' '}
-              format in CM!
+              format in <b>CM</b>!
             </div>
           </div>
         );
