@@ -9,6 +9,81 @@ function AddProduct() {
     setSelected(event.target.value);
   }
 
+  function productDetails(product) {
+    switch (product) {
+      case 'Book':
+        return (
+          <div>
+            <label className="form-label" htmlFor="weight">
+              Weight (KG)
+            </label>
+            <input
+              className="form-control"
+              type="number"
+              id="weight"
+              name="weight"
+            />
+            <div className="form-text text-warning">
+              Please, provide weight of this book in KG!
+            </div>
+          </div>
+        );
+      case 'Furniture':
+        return (
+          <div>
+            <label className="form-label" htmlFor="height">
+              Height (CM)
+            </label>
+            <input
+              className="form-control"
+              type="number"
+              id="height"
+              name="height"
+            />
+            <label className="form-label" htmlFor="width">
+              Width (CM)
+            </label>
+            <input
+              className="form-control"
+              type="number"
+              id="width"
+              name="width"
+            />
+            <label className="form-label" htmlFor="length">
+              Length (CM)
+            </label>
+            <input
+              className="form-control"
+              type="number"
+              id="length"
+              name="length"
+            />
+            <div className="form-text text-warning">
+              Please, provide dimensions of this Furniture in <b>HxWxLx</b>{' '}
+              format in CM!
+            </div>
+          </div>
+        );
+      default:
+        return (
+          <div>
+            <label className="form-label" htmlFor="size">
+              Size (MB)
+            </label>
+            <input
+              className="form-control"
+              type="number"
+              id="size"
+              name="size"
+            />
+            <div className="form-text text-warning">
+              Please, provide size of this DVD in MB!
+            </div>
+          </div>
+        );
+    }
+  }
+
   return (
     <div>
       <Navbar bg="light" expand={'lg'}>
@@ -17,12 +92,14 @@ function AddProduct() {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse className="justify-content-end">
             <Navbar.Text className="buttonsNavbar">
-              <Link to="/addproduct">
-                <Button variant="outline-success">ADD</Button>
-              </Link>
+              <label htmlFor="submitButton">
+                <Button variant="outline-success">Save</Button>
+              </label>
             </Navbar.Text>
             <Navbar.Text>
-              <Button variant="outline-danger">DELETE</Button>
+              <Link to="/">
+                <Button variant="outline-danger">Cancel</Button>
+              </Link>
             </Navbar.Text>
           </Navbar.Collapse>
         </Container>
@@ -91,8 +168,14 @@ function AddProduct() {
                   </select>
                 </Col>
               </Row>
+              <Row>
+                <Col md={6} sm={12}>
+                  {productDetails(selProduct)}
+                </Col>
+              </Row>
             </Col>
           </Row>
+          <input type="submit" className="d-none" id="submitButton" />
         </form>
       </Container>
     </div>
